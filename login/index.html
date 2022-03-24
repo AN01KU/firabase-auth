@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login in</title>
+  <link rel="stylesheet" href="css/mvp.css">
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js" defer></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js" defer></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+</head>
+
+<body>
+  <div>
+    <form id="login">
+      <h1>LOGIN</h1>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" class="form-control">
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" class="form-control">
+      <button type="submit">Login</button>
+    </form>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+
+        document
+          .getElementById("login")
+          .addEventListener("submit", (event) => {
+            event.preventDefault();
+          });
+
+      });
+    </script>
+
+
+    <script type="module">
+      import { initializeApp } from "firebase/app";
+
+      import {
+        getAuth
+      } from "firebase/auth";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDXcKMN6g-qDf9X45xKZu8E4E_GMCd-CYs",
+        authDomain: "learning-db9ad.firebaseapp.com",
+        databaseURL: "https://learning-db9ad-default-rtdb.firebaseio.com",
+        projectId: "learning-db9ad",
+        storageBucket: "learning-db9ad.appspot.com",
+        messagingSenderId: "300247716167",
+        appId: "1:300247716167:web:660413148ac9499633fc62"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth();
+    </script>
+
+    
+  </div>
+
+</body>
+
+</html>
